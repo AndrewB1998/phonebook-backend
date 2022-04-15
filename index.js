@@ -30,7 +30,7 @@ let persons = [
     }
 ]
 app.get('/', (req, res) => {
-    res.send('<h1>Hello World!</h1>')
+    res.send('<h1>Hello Worlds!</h1>')
   })
 app.get('/api/persons/', (req, res) => {
     res.json(persons)})
@@ -51,7 +51,7 @@ app.post('/api/persons', (req, res) => {
     if(body.number === undefined){
         return res.status(400).json({error: 'number missing'})
     }
-    if(persons.find(person=> person.name=== body.name)){
+    if(persons.find(person => person.name === body.name)){
         return res.status(400).json({error: 'name must be unique'})
     }
 
